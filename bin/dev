@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if ! foreman version &> /dev/null
+then
+  echo "Installing foreman..."
+  gem install foreman
+fi
+
+# check if there is a process running on port 3000
+if lsof -Pi :3032 -sTCP:LISTEN -t >/dev/null ; then
+  echo "Killing process on port 3032..."
+  kill -9 $(lsof -t -i:3032)
+fi
+
+foreman start -f Procfile.dev "$@"

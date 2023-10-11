@@ -1,0 +1,48 @@
+{
+  "name": "app",
+  "private": "true",
+  "engines": {
+    "node": ">=19.2.0",
+    "npm": ">=8.19.3",
+    "yarn": ">=1.22.19"
+  },
+  "dependencies": {
+    "@client-side-validations/client-side-validations": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^7.3.0",
+    "@popperjs/core": "^2.11.8",
+    "@rails/actioncable": "^7.0.6",
+    "@rails/actiontext": "^7.0.6",
+    "@rails/request.js": "^0.0.8",
+    "@tkrotoff/bootstrap-floating-label": "^0.12.2",
+    "animate.css": "^4.1.1",
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.3.0",
+    "datatables.net-bs5": "^1.13.4",
+    "datatables.net-buttons-bs5": "^2.3.6",
+    "file-loader": "^6.2.0",
+    "jquery": "^3.6.2",
+    "roboto-fontface": "^0.10.0",
+    "sass": "^1.69.2",
+    "sass-loader": "^13.3.2",
+    "select2": "^4.1.0-rc.0",
+    "sweetalert2": "^11.7.12",
+    "timeago": "^1.6.7",
+    "trix": "^2.0.5",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.9.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.prod.js",
+    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "start-dev": "webpack-dev-server --config=webpack.config.dev.js"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.15.1"
+  }
+}
